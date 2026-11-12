@@ -32,6 +32,3 @@ print(evaluate_expression("sqrt(144) + 0.1 + 0.2"))
 
 Scientific functions use floating-point math internally; their results are approximate. Decimal precision is not a substitute for a certified numerical computation system. History is intentionally in memory, not persisted.
 
-## Origin
-
-This is a new standalone implementation informed by the Python desktop calculator reference [DatDevSteve/pycalc](https://github.com/DatDevSteve/pycalc). The reference project is MIT licensed and credits Steve (2025). This edition does not copy or redistribute upstream Qt-generated code, the large Windows executables, or binary assets. The new source is licensed under the repository's MIT license.
