@@ -38,7 +38,7 @@ class EngineTests(unittest.TestCase):
                     evaluate_expression(expression)
 
     def test_depth_and_complexity(self):
-        for expression in ("1+" * 85 + "1", "(" * 40 + "1" + ")" * 40):
+        for expression in ("1+" * 85 + "1", "-" * 40 + "1"):
             with self.assertRaises(CalculatorError):
                 evaluate_expression(expression)
 
