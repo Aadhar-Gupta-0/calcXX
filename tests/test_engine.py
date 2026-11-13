@@ -27,6 +27,10 @@ class EngineTests(unittest.TestCase):
         self.assertTrue(Decimal("3.14") < evaluate_expression("pi") < Decimal("3.15"))
         self.assertEqual(format_result(evaluate_expression("2+2")), "4")
 
+    def test_large_integer_formatting_does_not_overflow_default_precision(self):
+        self.assertEqual(format_result(evaluate_expression("10**29")), "1" + "0" * 29)
+        self.assertEqual(format_result(evaluate_expression("99999999999999999999999999999")), "99999999999999999999999999999")
+
     def test_invalid_operations(self):
         invalid = ["1/0", "sqrt(-1)", "ln(0)", "2**9999", "2**2.5",
                    "not_a_variable", "open('secret')", "().__class__",
