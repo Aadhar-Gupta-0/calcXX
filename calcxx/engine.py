@@ -137,5 +137,5 @@ def format_result(value: Decimal) -> str:
     if not isinstance(value, Decimal) or not value.is_finite():
         raise CalculatorError("Invalid result")
     if value == value.to_integral_value():
-        return str(value.quantize(Decimal(1))) if abs(value) < Decimal("1e30") else str(value.normalize())
+        return format(value, "f") if abs(value) < Decimal("1e30") else str(value.normalize())
     return format(value.normalize(), "f") if abs(value) < Decimal("1e20") else str(value.normalize())
